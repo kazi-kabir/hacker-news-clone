@@ -12,7 +12,7 @@ let anotestObj  = {
  }
 
 let closeToRealHN = {
-        by : "dhouston",
+        by : "dashthedog",
         time : 1175714200,
         title : "My YC app: Dropbox - Throw away your USB drive",
         url : "http://www.getdropbox.com/u/2/screencast.html"
