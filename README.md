@@ -7,6 +7,9 @@ what do i want to achieve?
 - create a loop that gets all 
 - limit them
 
+- get data
+    - fake data from hackernews API
+
 
 console.log('fembar')
         

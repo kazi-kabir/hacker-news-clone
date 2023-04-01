@@ -1,6 +1,9 @@
 // arr for storing div
 let arr = [];
 
+// deconstruct the receiving object
+// then push into appropriate variables
+
 function createDivs(num) {
     console.log('foobar')
     
