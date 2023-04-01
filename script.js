@@ -1,21 +1,28 @@
 // arr for storing div
 let testObj  = {
-   title: "This cool hack",
-   user: "fooForever",
+   title: "I like to run",
+   by : "chiko",
    data: {} 
 }
 
 let anotestObj  = {
     title: "Rust is amazing",
-    user: "fooForever",
+    by : "suki",
     data: {} 
  }
+
+let closeToRealHN = {
+        by : "dhouston",
+        time : 1175714200,
+        title : "My YC app: Dropbox - Throw away your USB drive",
+        url : "http://www.getdropbox.com/u/2/screencast.html"
+}
 
 let arr = [
 
 ];
 
-let objArray = [testObj, anotestObj];
+let objArray = [testObj, anotestObj, closeToRealHN];
 
 // deconstruct the receiving object
 // then push into appropriate variables
@@ -25,7 +32,7 @@ function createDivs(arr) {
     console.log(arr.length)
     
     for(let i = 0; i < arr.length; i++) {
-        var divElement = document.createElement("Div");
+        let divElement = document.createElement("Div");
         divElement.id = "divID"+1;
         
         // abstract this out l8r
@@ -36,11 +43,16 @@ function createDivs(arr) {
         divElement.style.border = "1px solid black"
     
         // add more to this
-        var paragraph = document.createElement("P");
-        var text = document.createTextNode(arr[i].title);
+        let paragraph = document.createElement("P");
+        let text = document.createTextNode(arr[i].title);
         paragraph.appendChild(text);
         divElement.appendChild(paragraph);
-    
+        
+        let user = document.createElement("P");
+        let postedBy = document.createTextNode("posted by " + arr[i].by);
+        paragraph.appendChild(user);
+        divElement.appendChild(postedBy);
+
         // is the arr necessary? can i access through other means
         const contentArea = document.getElementsByClassName('contentarea');
         console.log(contentArea);
