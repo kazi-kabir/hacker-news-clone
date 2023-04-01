@@ -5,3 +5,7 @@
 .contentarea{
     border: 1px solid black
 }
+
+.contentbox {
+    border: 1px solid yellow 
+}
