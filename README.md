@@ -6,3 +6,7 @@ what do i want to achieve?
 - create fake JSON data to get and populate blog fields
 - create a loop that gets all 
 - limit them
+
+
+console.log('fembar')
+        
