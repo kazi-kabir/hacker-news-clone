@@ -1,16 +1,32 @@
 // arr for storing div
-let arr = [];
+let testObj  = {
+   title: "This cool hack",
+   user: "fooForever",
+   data: {} 
+}
+
+let anotestObj  = {
+    title: "Rust is amazing",
+    user: "fooForever",
+    data: {} 
+ }
+
+let arr = [
+
+];
+
+let objArray = [testObj, anotestObj];
 
 // deconstruct the receiving object
 // then push into appropriate variables
 
-function createDivs(num) {
+function createDivs(arr) {
     console.log('foobar')
+    console.log(arr.length)
     
-    for(let i = 0; i < num; i++) {
+    for(let i = 0; i < arr.length; i++) {
         var divElement = document.createElement("Div");
         divElement.id = "divID"+1;
-        console.log(num);
         
         // abstract this out l8r
         divElement.style.textAlign = "center";
@@ -21,18 +37,16 @@ function createDivs(num) {
     
         // add more to this
         var paragraph = document.createElement("P");
-        var text = document.createTextNode("Another paragraph, yay! This one will be styled different from the rest since we styled the DIV we specifically created.");
+        var text = document.createTextNode(arr[i].title);
         paragraph.appendChild(text);
         divElement.appendChild(paragraph);
     
-
         // is the arr necessary? can i access through other means
         const contentArea = document.getElementsByClassName('contentarea');
         console.log(contentArea);
         contentArea[0].appendChild(divElement);
-        arr.push(divElement);
     }
 }
 
 
-createDivs(10);
+createDivs(objArray);
