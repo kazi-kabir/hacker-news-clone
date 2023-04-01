@@ -15,18 +15,6 @@ var text = document.createTextNode("Another paragraph, yay! This one will be sty
 paragraph.appendChild(text);
 divElement.appendChild(paragraph);
 
-// Adding a button, cause why not!
-var button = document.createElement("Button");
-var textForButton = document.createTextNode("Release the alert");
-button.appendChild(textForButton);
-button.addEventListener("click", function(){
-    alert("Hi!");
-});
-divElement.appendChild(button);
-
-// Appending the div element to body
-//document.getElementsByClassName("contentarea")[0].appendChild
-
-let fembar = document.getElementsByClassName("contentarea");
-
-console.log(fembar)
+const contentArea = document.getElementsByClassName('contentarea');
+console.log(contentArea);
+contentArea[0].appendChild(divElement);
