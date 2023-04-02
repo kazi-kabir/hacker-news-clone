@@ -27,7 +27,7 @@ const URL_test = "https://hacker-news.firebaseio.com/v0/item/35406369.json?print
 
 // move this into sep func
 async function logJSONData(URL) {
-    const response = await fetch("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty");
+    const response = await fetch(URL);
     const jsonData = await response.json();
     console.log(jsonData);
 }
