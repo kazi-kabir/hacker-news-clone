@@ -22,6 +22,7 @@ let arr = [
 
 ];
 
+// move this into sep func
 async function logJSONData() {
     const response = await fetch("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty");
     const jsonData = await response.json();
