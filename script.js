@@ -22,14 +22,20 @@ let arr = [
 
 ];
 
+const URL = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"; 
+const URL_test = "https://hacker-news.firebaseio.com/v0/item/35406369.json?print=pretty";
+
 // move this into sep func
-async function logJSONData() {
+async function logJSONData(URL) {
     const response = await fetch("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty");
     const jsonData = await response.json();
     console.log(jsonData);
 }
 
-logJSONData();
+// https://hacker-news.firebaseio.com/v0/item/35406369.json?print=pretty
+
+logJSONData(URL);
+logJSONData(URL_test);
 
 let objArray = [testObj, anotestObj, closeToRealHN];
 
