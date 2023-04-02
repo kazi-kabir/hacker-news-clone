@@ -22,6 +22,14 @@ let arr = [
 
 ];
 
+async function logJSONData() {
+    const response = await fetch("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty");
+    const jsonData = await response.json();
+    console.log(jsonData);
+}
+
+logJSONData();
+
 let objArray = [testObj, anotestObj, closeToRealHN];
 
 // deconstruct the receiving object
