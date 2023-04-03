@@ -1,27 +1,3 @@
-// arr for storing div
-let testObj  = {
-   title: "I like to run",
-   by : "chiko",
-   data: {} 
-}
-
-let anotestObj  = {
-    title: "Rust is amazing",
-    by : "suki",
-    data: {} 
- }
-
-let closeToRealHN = {
-        by : "dashthedog",
-        time : 1175714200,
-        title : "My YC app: Dropbox - Throw away your USB drive",
-        url : "http://www.getdropbox.com/u/2/screencast.html"
-}
-
-let arr = [
-
-];
-
 const URL = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"; 
 const URL_test = "https://hacker-news.firebaseio.com/v0/item/35406369.json?print=pretty";
 
@@ -35,13 +11,13 @@ async function logJSONData(URL) {
 // https://hacker-news.firebaseio.com/v0/item/35406369.json?print=pretty
 
 logJSONData(URL);
-logJSONData(URL_test);
+let newobj = logJSONData(URL_test);
 
-let objArray = [testObj, anotestObj, closeToRealHN];
+let objArray = [newobj];
 
 // deconstruct the receiving object
 // then push into appropriate variables
-
+// figure out how to retrieve data from objarray
 function createDivs(arr) {
     console.log('foobar')
     console.log(arr.length)
@@ -59,7 +35,7 @@ function createDivs(arr) {
     
         // add more to this
         let paragraph = document.createElement("P");
-        let text = document.createTextNode(arr[i].title);
+        let text = document.createTextNode(arr[i]);
         paragraph.appendChild(text);
         divElement.appendChild(paragraph);
         
