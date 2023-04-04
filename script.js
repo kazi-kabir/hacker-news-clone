@@ -15,6 +15,18 @@ let newobj = logJSONData(URL_test);
 
 let objArray = [newobj];
 
+function loopThroughPosts(arr) {
+    let postArr = []
+    for(let x = 0; x < arr.length; i++) {
+        arr[x] = "https://hacker-news.firebaseio.com/v0/item/"+arr[x]+".json?print=pretty";
+        postArr.push(arr[x])
+    }
+
+    return postArr;
+}
+
+
+
 // deconstruct the receiving object
 // then push into appropriate variables
 // figure out how to retrieve data from objarray
