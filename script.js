@@ -5,15 +5,11 @@ const URL_test = "https://hacker-news.firebaseio.com/v0/item/35406369.json?print
 async function logJSONData(URL) {
     const response = await fetch(URL);
     const jsonData = await response.json();
-    console.log(jsonData);
 }
 
 // https://hacker-news.firebaseio.com/v0/item/35406369.json?print=pretty
 
-logJSONData(URL);
 let newobj = logJSONData(URL_test);
-
-let objArray = [newobj];
 
 function loopThroughPosts(arr) {
     let postArr = []
@@ -24,8 +20,6 @@ function loopThroughPosts(arr) {
 
     return postArr;
 }
-
-
 
 // deconstruct the receiving object
 // then push into appropriate variables
@@ -62,6 +56,3 @@ function createDivs(arr) {
         contentArea[0].appendChild(divElement);
     }
 }
-
-
-createDivs(objArray);
