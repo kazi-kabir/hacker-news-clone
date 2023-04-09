@@ -1,15 +1,21 @@
 const URL = "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty"; 
 const URL_test = "https://hacker-news.firebaseio.com/v0/item/35406369.json?print=pretty";
 
+
+let arrholder = []
 // move this into sep func
 async function logJSONData(URL) {
     const response = await fetch(URL);
     const jsonData = await response.json();
+    console.log(jsonData)
+    arrholder.push(jsonData)
+    console.log(arrholder.length)
+    createDivs(arrholder)
 }
 
 // https://hacker-news.firebaseio.com/v0/item/35406369.json?print=pretty
 
-let newobj = logJSONData(URL_test);
+logJSONData(URL_test)
 
 function loopThroughPosts(arr) {
     let postArr = []
@@ -41,7 +47,7 @@ function createDivs(arr) {
     
         // add more to this
         let paragraph = document.createElement("P");
-        let text = document.createTextNode(arr[i]);
+        let text = document.createTextNode(arr[i].title);
         paragraph.appendChild(text);
         divElement.appendChild(paragraph);
         
@@ -52,7 +58,6 @@ function createDivs(arr) {
 
         // is the arr necessary? can i access through other means
         const contentArea = document.getElementsByClassName('contentarea');
-        console.log(contentArea);
         contentArea[0].appendChild(divElement);
     }
 }
