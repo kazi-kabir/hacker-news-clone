@@ -8,18 +8,21 @@ async function logJSONData(URL) {
     const response = await fetch(URL);
     const jsonData = await response.json();
     console.log(jsonData)
-    arrholder.push(jsonData)
+    console.log(jsonData.length)
+    arrholder = loopThroughPosts(jsonData); 
     console.log(arrholder.length)
     createDivs(arrholder)
 }
 
 // https://hacker-news.firebaseio.com/v0/item/35406369.json?print=pretty
 
-logJSONData(URL_test)
+logJSONData(URL)
+
+
 
 function loopThroughPosts(arr) {
     let postArr = []
-    for(let x = 0; x < arr.length; i++) {
+    for(let x = 0; x < arr.length; x++) {
         arr[x] = "https://hacker-news.firebaseio.com/v0/item/"+arr[x]+".json?print=pretty";
         postArr.push(arr[x])
     }
