@@ -18,7 +18,7 @@ async function logJSONData(URL) {
 
 logJSONData(URL)
 
-
+// need another call to URLs separately!
 
 function loopThroughPosts(arr) {
     let postArr = []
