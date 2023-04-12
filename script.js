@@ -11,7 +11,13 @@ async function logJSONData(URL) {
     console.log(jsonData.length)
     arrholder = loopThroughPosts(jsonData); 
     console.log(arrholder.length)
+    console.log(arrholder[0])
     createDivs(arrholder)
+}
+
+async function logURLData(URL) {
+    const response = await fetch(URL);
+    const jsonData = await response.json(); 
 }
 
 // https://hacker-news.firebaseio.com/v0/item/35406369.json?print=pretty
@@ -24,6 +30,9 @@ function loopThroughPosts(arr) {
     let postArr = []
     for(let x = 0; x < arr.length; x++) {
         arr[x] = "https://hacker-news.firebaseio.com/v0/item/"+arr[x]+".json?print=pretty";
+        logURLData(arr[x]);
+        console.log('feb')
+        console.log(arr[x])
         postArr.push(arr[x])
     }
 
