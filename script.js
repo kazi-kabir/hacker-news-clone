@@ -49,7 +49,8 @@ function createDivs(arr) {
     for(let i = 0; i < arr.length; i++) {
         let divElement = document.createElement("Div");
         divElement.id = "divID"+1;
-        
+        console.log('inside divgenfunc') 
+        console.log(arr[0])
         // abstract this out l8r
         divElement.style.textAlign = "center";
         divElement.style.fontWeight = "bold";
